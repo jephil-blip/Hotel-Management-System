@@ -1,7 +1,12 @@
-# 🏨 Hotel Management API – Postman Collection
+---
 
-This Postman documentation provides sample API requests and instructions for testing the **Hotel Management API**.  
-The API allows management of **rooms**, **guests**, and **bookings** using standard RESTful methods: **GET**, **POST**, and **DELETE**.
+**Name:** Jephil Honasan
+**Course & Block:** BSCS 4-1
+
+# 🏨 Hotel Management API – Postman Documentation
+
+This Postman collection provides example requests and detailed instructions for interacting with the **Hotel Management API**.
+The API supports management of **rooms**, **guests**, and **bookings** through standard RESTful methods: **GET**, **POST**, and **DELETE**.
 
 ---
 
@@ -11,38 +16,41 @@ The API allows management of **rooms**, **guests**, and **bookings** using stand
 http://localhost:3000/api
 ```
 
-> Replace `localhost:3000` with your actual deployed URL if hosted.
+> Replace `localhost:3000` with your production or deployed server URL if applicable.
 
 ---
 
-## 📦 API Endpoints Overview
+## 📦 API Endpoint Summary
 
-| Resource | Method | Endpoint | Description |
-|-----------|---------|-----------|--------------|
-| Rooms     | GET     | `/rooms` | Retrieve all rooms |
-| Rooms     | POST    | `/rooms` | Add a new room |
-| Rooms     | DELETE  | `/rooms/:id` | Delete a specific room |
-| Guests    | GET     | `/guests` | Retrieve all guests |
-| Guests    | POST    | `/guests` | Register a new guest |
-| Guests    | DELETE  | `/guests/:id` | Delete a guest record |
-| Bookings  | GET     | `/bookings` | View all bookings |
-| Bookings  | POST    | `/bookings` | Create a new booking |
-| Bookings  | DELETE  | `/bookings/:id` | Cancel a booking |
+| Resource | Method | Endpoint        | Description            |
+| -------- | ------ | --------------- | ---------------------- |
+| Rooms    | GET    | `/rooms`        | Get all rooms          |
+| Rooms    | POST   | `/rooms`        | Create a new room      |
+| Rooms    | DELETE | `/rooms/:id`    | Delete a specific room |
+| Guests   | GET    | `/guests`       | Get all guest records  |
+| Guests   | POST   | `/guests`       | Add a new guest        |
+| Guests   | DELETE | `/guests/:id`   | Remove a guest         |
+| Bookings | GET    | `/bookings`     | View all bookings      |
+| Bookings | POST   | `/bookings`     | Make a new booking     |
+| Bookings | DELETE | `/bookings/:id` | Cancel a booking       |
 
 ---
 
-## 🧩 Sample Requests
+## 🧩 Sample API Requests
 
-### 1. GET – Retrieve All Rooms
-**Endpoint:**  
+### 1. GET – Fetch All Rooms
+
+**Endpoint:**
+
 ```
 GET /rooms
 ```
 
-**Description:**  
-Fetches all rooms available in the hotel, including occupancy status and price.
+**Description:**
+Retrieves a list of all rooms, including their availability and pricing details.
 
-**Response Example:**
+**Sample Response:**
+
 ```json
 [
   {
@@ -65,12 +73,15 @@ Fetches all rooms available in the hotel, including occupancy status and price.
 ---
 
 ### 2. POST – Add a New Room
-**Endpoint:**  
+
+**Endpoint:**
+
 ```
 POST /rooms
 ```
 
-**Request Body:**
+**Request Body Example:**
+
 ```json
 {
   "roomNumber": 105,
@@ -80,7 +91,8 @@ POST /rooms
 }
 ```
 
-**Response Example:**
+**Sample Response:**
+
 ```json
 {
   "message": "Room added successfully",
@@ -97,17 +109,21 @@ POST /rooms
 ---
 
 ### 3. DELETE – Remove a Room
-**Endpoint:**  
+
+**Endpoint:**
+
 ```
 DELETE /rooms/:id
 ```
 
 **Example Request:**
+
 ```
 DELETE /rooms/67100123abc
 ```
 
-**Response Example:**
+**Sample Response:**
+
 ```json
 {
   "message": "Room deleted successfully."
@@ -116,26 +132,33 @@ DELETE /rooms/67100123abc
 
 ---
 
-## 💡 Notes for Postman Testing
+## 💡 Postman Testing Tips
 
-1. **Set Environment Variables**
-   - Create a variable in Postman named `base_url` with the value `http://localhost:5000/api`.
-   - Use `{{base_url}}/rooms` in your requests for easier environment switching.
+1. **Use Environment Variables**
 
-2. **Headers**
-   - For `POST` and `DELETE` requests, include:
+   * Set up a `base_url` variable in Postman (e.g., `http://localhost:5000/api`).
+   * Replace hardcoded URLs with `{{base_url}}/rooms`, etc., for flexibility.
+
+2. **Request Headers**
+
+   * For `POST` and `DELETE` requests, include:
+
      ```
      Content-Type: application/json
      ```
 
-3. **Authorization (Optional)**
-   - If your API uses authentication, include your token in:
+3. **Authentication (If Required)**
+
+   * If your API uses token-based authentication, add:
+
      ```
      Authorization: Bearer <your_token_here>
      ```
 
-4. **Error Responses**
-   - Invalid requests return structured error messages such as:
+4. **Error Handling**
+
+   * Error responses follow a consistent format. Example:
+
      ```json
      {
        "error": "Room not found"
@@ -144,7 +167,7 @@ DELETE /rooms/67100123abc
 
 ---
 
-## 📘 Example Postman Folder Structure
+## 📘 Suggested Postman Folder Structure
 
 ```
 Hotel Management API/
@@ -164,12 +187,17 @@ Hotel Management API/
 
 ---
 
-## 🧾 Version
-**API Version:** 1.0.0  
-**Last Updated:** October 17, 2025  
+## 🧾 Version Information
+
+* **API Version:** 1.0.0
+* **Last Updated:** October 20, 2025
 
 ---
 
-## 👨‍💻 Developer
-**Author:** Jephil Honasan
-**Tech Stack:** Node.js | Express | MongoDB | Postman  
+## 👨‍💻 Developer Information
+
+* **Author:** Jephil Honasan
+* **Technology Stack:** Node.js | Express | MongoDB | Postman
+
+---
+
