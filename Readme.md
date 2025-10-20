@@ -1,5 +1,3 @@
----
-
 **Name:** Jephil Honasan
 **Course & Block:** BSCS 4-1
 
@@ -190,7 +188,7 @@ Hotel Management API/
 ## 🧾 Version Information
 
 * **API Version:** 1.0.0
-* **Last Updated:** October 20, 2025
+* **Last Updated:** October 17, 2025
 
 ---
 
